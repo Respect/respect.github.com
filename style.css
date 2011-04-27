@@ -64,11 +64,18 @@ body {
 }
 li{
     list-style: disc inside;
+    margin-bottom: 0.3em;
 
+}
+li a:nth-child(2) {
+    color: #5C9E4F;
 }
 dt {
     font-weight: bold;
     margin-top: 0.7em;
+}
+dt:first-child {
+    margin-top: 0;
 }
 dt small {
     font-size: 0.7em;
@@ -101,13 +108,13 @@ h1 {
 h2 {
     font-size: 1.3em;
     font-weight: bold;
-    margin: 0.5em 0;
+    margin: 1.2em 0 0.3em -1.2em;
     color: #5C9E4F;
-    margin-left: -1.2em;
 }
 
 h2:before, h1:before {
     content: "⇢ ";
     color: #AAA;
 }
+
 
