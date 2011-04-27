@@ -1,0 +1,113 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    min-width: 45em;
+}
+
+body {
+    font: 11pt Ubuntu, Arial, sans-serif;
+    width: 40em;
+    margin: 0 auto;
+    color: #555;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    -moz-box-shadow:0px 10px 15px #D7D7D7;
+    -webkit-box-shadow:0px 10px 15px #D7D7D7;
+    box-shadow:0px 10px 15px #D7D7D7;
+}
+li{
+    list-style: disc inside;
+
+}
+dt {
+    font-weight: bold;
+    margin-top: 0.7em;
+}
+dt small {
+    font-size: 0.7em;
+    color: #AAA;
+    vertical-align: top;
+}
+dd {
+    margin-left: 1em;
+}
+a {
+    color: #777;
+}
+a:hover {
+    color: #5C9E4F;
+}
+dd:before {
+    content: "⤷";
+    color: #AAA;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.1em;
+    color: #5C9E4F;
+    margin-left: -1.2em;
+    padding-top: 0.2em;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0.5em 0;
+    color: #5C9E4F;
+    margin-left: -1.2em;
+}
+
+h2:before, h1:before {
+    content: "⇢ ";
+    color: #AAA;
+}
+
