@@ -118,3 +118,21 @@ h2:before, h1:before {
 }
 
 
+
+/**********
+Flags
+**********/
+
+#flags ul {
+	list-style: none;
+	padding-top: 10px;
+}
+
+#flags li {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+#flags a:hover, #flags a:active, #flags a:focus  {
+	border-bottom: 3px solid #5C9E4F;
+}
