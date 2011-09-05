@@ -193,9 +193,11 @@ nav.lang{
 .select, .component{
 	background:#f0f6ee;
 	border: 1px solid #e4efe1;
-	border-top:none
 }
 
+.select{
+	border-top:none
+}
 /* Fork me Button */
 
 a.fork{
@@ -233,5 +235,12 @@ a.fork:hover {
 		text-shadow:none;
 	}
 
+/* Others*/
+
+.original-title {
+	margin-left: 15px;
+	font-style: italic;
+	font-size: 0.8em;
+}
 
 
