@@ -5,47 +5,62 @@
         <meta charset="utf-8"> 
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <link rel="stylesheet" href="style.css">
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-        <hgroup>
-            <h1>Respect Project</h1>
-            <h3>Simple independent components for building or improving PHP applications.</h3>
-        </hgroup>
+		<header>
+			<hgroup>
+				<h1>Respect Project</h1>
+				<h3>Simple independent components for building or improving PHP applications.</h3>
+			</hgroup>
+			<nav class="lang">
+				<ul>
+					<li class="select"><a href="index.html" title="in english"><img src="images/uk.png" alt="in english"/></a></li>
+					<li><a href="index-ptbr.html" title="em portugu&ecirc;s"><img src="images/br.png" alt="em português"/></a></li>
+				</ul>
+			</nav>
+		</header>
 
-        <section>
+        <section class="components">
             <h2>Components</h2>
             <dl>
-                <dt>
-                <a href="http://github.com/Respect/Config#readme">Respect\Config</a> 
-                <small title="Almost stable">pre-alpha</small>
-                </dt>
-                <dd>Powerful, easy INI-based configuration and dependency injection.</dd>
-                <dt>
-                <a href="http://github.com/Respect/Relational#readme">Respect\Relational</a> 
-                <small title="In development">dev</small>
-                </dt>
-                <dd>A fluent, intuitive ORM for any database engine.</dd>
-                <dt>
-                <a href="http://github.com/Respect/Rest#readme">Respect\Rest</a> 
-                <small title="In development">dev</small>
-                </dt>
-                <dd>Thin controller for RESTful applications.</dd>
-                <dt>
-                <a href="http://github.com/Respect/Validation#readme">Respect\Validation</a> 
-                <small title="In development">dev</small>
-                </dt>
-                <dd>The most awesome validation engine ever created for PHP.</dd>
+				<div class="component">
+					<dt>
+					<a href="http://github.com/Respect/Config#readme">Respect\Config</a> 
+					<small title="Almost stable" class="pre-alpha">pre-alpha</small>
+					</dt>
+					<dd>Powerful, easy INI-based configuration and dependency injection.</dd>
+				</div>
+				<div class="component">
+					<dt>
+					<a href="http://github.com/Respect/Relational#readme">Respect\Relational</a> 
+					<small title="In development" class="dev">dev</small>
+					</dt>
+					<dd>A fluent, intuitive ORM for any database engine.</dd>
+				</div>
+				<div class="component">	
+					<dt>
+					<a href="http://github.com/Respect/Rest#readme">Respect\Rest</a> 
+					<small title="In development"  class="dev">dev</small>
+					</dt>
+					<dd>Thin controller for RESTful applications.</dd>
+				</div>
+				<div class="component">
+					<dt>
+					<a href="http://github.com/Respect/Validation#readme">Respect\Validation</a> 
+					<small title="In development"  class="dev">dev</small>
+					</dt>
+					<dd>The most awesome validation engine ever created for PHP.</dd>
+				</div>
             </dl>
         </section>
         
-        <section>
+        <section class="downloads">
             <h2>Downloads and Installation</h2>
             <p>See our <a href="http://respect.github.com/pear/">PEAR Channel</a> for instructions</p>
         </section>
 
-        <section>
+        <section class="articles">
             <h2>Articles</h2>
             <ul>
                 <li><a href="http://www.phparch.com/2011/03/more-powerful-validation-from-respect/">More powerful Validation from Respect</a> on <a href="http://phparch.com">php|architect</a></li>
@@ -55,7 +70,7 @@
         </section>
 
         <footer>
-            <p><a href="http://github.com/Respect"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a></p>
+            <p><a href="http://github.com/Respect" class="fork">Fork me on GitHub</a></p>
         </footer>
     </body>
 </html>
