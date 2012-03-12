@@ -26,8 +26,8 @@ var Disqus = function(identifier) {
 				if (anchor.nodeType !== 1) { continue; }
 				nodes        = anchor.href.split('#');
 				anchor.dsqId = nodes.pop();
-				console.log('Adding DISQUS event for: '+anchor.dsqId);
-				addEvent(anchor, 'click', function() { Disqus(this.dsqId); console.log('Event catch for: ', this.dsqId); });
+				//console.log('Adding DISQUS event for: '+anchor.dsqId);
+				addEvent(anchor, 'click', function() { Disqus(this.dsqId); /*console.log('Event catch for: ', this.dsqId);*/ });
 			}
 		}
 	}
@@ -35,8 +35,8 @@ var Disqus = function(identifier) {
 	disqus_identifier       = identifier;
 	dsq                     = {};
 	dsq_container.innerHTML = '';
-
 	(function() {
+	console.log('Identifier: '+disqus_identifier);
     dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
