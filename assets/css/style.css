@@ -175,6 +175,9 @@ section.downloads h2 {
 section.articles h2 {
     background:url(../img/icons/32/books.png) no-repeat;
 }
+section.support h2 {
+    background:url(../img/icons/32/support.png) no-repeat;
+}
 
 /* Nav Lang Style*/
 
