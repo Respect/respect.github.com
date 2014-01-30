@@ -130,6 +130,11 @@ small.dev {
     background:#badbb0;
 }
 
+small.release {
+    border:1px solid #6495ED;
+    background: #9AC0CD;
+}
+
 dl.component dd {
     margin-left: 1.8em;
 }
