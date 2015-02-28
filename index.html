@@ -1,152 +1,124 @@
-<!doctype html>
-<html> 
+<!DOCTYPE html>
+<html>
     <head>
-        <title>Respect Project</title>
-        <meta charset="utf-8"> 
-        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title class="trans">Respect - Simple independent components for building or improving PHP applications</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/js/script.js"></script>
+
     </head>
     <body>
-        <header>
-            <hgroup>
-                <h1>Respect Project</h1>
-                <h3 class="lang en">Simple independent components for building or improving PHP applications.</h3>
-                <h3 class="lang pt-br">Componentes simples e independentes para construção e melhoria de aplicações PHP.</h3>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+            <hgroup class="navbar-brand">
+                <h1>Respect</h1>
+                <small class="trans">Simple independent components for building or improving PHP applications</small>
             </hgroup>
             <nav class="language">
-                <select id="language">
-                    <option value=".en">English</option>
-                    <option value=".pt-br">Portuguese (BR)</option>
-                </select>
+                    <a href="https://github.com/Respect">
+                        <img src="http://cdn.icons8.com/windows8/PNG/26/Programming/github_copyrighted-26.png" title="Github" width="26">
+                    </a>
+                    &nbsp;
+                    <a href="https://twitter.com/phprespect">
+                        <img src="http://cdn.icons8.com/windows8/PNG/26/Social_Networks/twitter-26.png" title="Twitter" width="26">
+                    </a>
+                    &nbsp;
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="pt-br">Portuguese (BR)</option>
+                    </select>
             </nav>
         </header>
 
-        <section class="components">
-            <h2 class="lang en">Components</h2>
-            <h2 class="lang pt-br">Componentes</h2>
-            <dl class="component">
-                <dt>
-                    <a href="/docs/Foundation">Respect\Foundation</a> 
-                    <small title="Almost stable" class="pre-alpha">pre-alpha</small>
-                </dt>
-                <dd class="lang en">The foundation of every Respect component.</dd>
-                <dd class="lang pt-br">A fundação de todo componente do Respect.</dd>
-            </dl>
-            <dl class="component">
-                <dt>
-                    <a href="/docs/Config">Respect\Config</a> 
-                    <small title="Release" class="release">1.0.1</small>
-                </dt>
-                <dd class="lang en">Powerful, easy INI-based configuration and dependency injection.</dd>
-                <dd class="lang pt-br">Poderoso e simples ferramenta de configuração baseada em arquivos INI.</dd>
-            </dl>
-            <dl class="component">
-                <dt>
-                    <a href="http://github.com/Respect/Relational#readme">Respect\Relational</a> 
-                    <small title="In development" class="dev">dev</small>
-                </dt>
-                <dd class="lang en">A fluent, intuitive ORM for any database engine.</dd>
-                <dd class="lang pt-br">Uma ORM fluente e intuitivo para qualquer banco de dados relacional.</dd>
-            </dl>
-            <dl class="component">	
-                <dt>
-                    <a href="/docs/Rest">Respect\Rest</a> 
-                    <small title="In development"  class="dev">dev</small>
-                </dt>
-                <dd class="lang en">Thin controller for RESTful applications.</dd>
-                <dd class="lang pt-br"><em>Controller</em> para aplicações RESTful.</dd>
-            </dl>
-            <dl class="component">
-                <dt>
-                    <a href="http://github.com/Respect/Validation#readme">Respect\Validation</a> 
-                    <small title="In development"  class="dev">dev</small>
-                </dt>
-                <dd class="lang en">The most awesome validation engine ever created for PHP.</dd>
-                <dd class="lang pt-br">O mais incrível mecanismo de validação já criado para PHP.</dd>
-            </dl>
-            <dl class="component">
-                <dt>
-                    <a href="http://github.com/Respect/Template#readme">Respect\Template</a> 
-                    <small title="In development"  class="dev">dev</small>
-                </dt>
-                <dd class="lang en">Experimental, HTML-only templating engine.</dd>
-                <dd class="lang pt-br">Template engine experimental que funciona com HTML apenas.</dd>
-            </dl>
-        </section>
+        <main class="container">
 
-        <section class="components">
-            <h2 class="lang en">Add-ons</h2>
-            <h2 class="lang pt-br">Extensões</h2>
-            <dl class="component">
-                <dt class="lang en">
-                    <a href="https://packagist.org/packages/tear/respect-validation-bundle">RespectValidationBundle</a> for Symfony 2
-                    <small title="In development" class="dev">dev</small>
-                </dt>
-                <dt class="lang pt-br">
-		          <a href="https://packagist.org/packages/tear/respect-validation-bundle">RespectValidationBundle</a> para Symfony 2
-                    <small title="In development" class="dev">dev</small>
-                </dt>
-                <dd class="lang en">Symfony 2.1 (or higher) Bundle for the most awesome validation engine ever created for PHP</dd>
-                <dd class="lang pt-br">Bundle do Symfony 2.1 (ou superior) para o mais incrível mecanismo de validação já criado para PHP.</dd>
-            </dl>
-        </section>
+            <section id="components">
+                <h2 class="trans">Components</h2>
+                <div class="row"></div>
+            </section>
+            <hr />
 
-        <section class="downloads">
-            <h2 class="lang en">Downloads and Installation</h2>
-            <h2 class="lang pt-br">Downloads e Instalação</h2>
-            <p class="lang en">See our <a href="http://respect.github.com/pear/">PEAR Channel</a> for instructions</p>
-            <p class="lang pt-br">Visite nosso <a href="http://respect.github.com/pear/">Canal PEAR</a> para instruções</p>
-        </section>
+            <section id="addons">
+                <h2 class="trans">Add-ons</h2>
+                <div class="row"></div>
+            </section>
+            <hr />
 
-        <section class="support">
-            <h2 class="lang en">Support</h2>
-            <h2 class="lang pt-br">Suporte</h2>
-            <p class="lang en">See our IRC channel: <a href="irc://irc.freenode.net/php-respect">#php-respect</a></p>
-            <p class="lang pt-br">Visite nosso canal no IRC: <a href="irc://irc.freenode.net/php-respect">#php-respect</a></p>
-        </section>
+            <section id="tools">
+                <h2 class="trans">Tools</h2>
+                <div class="row"></div>
+            </section>
+            <hr />
 
-        <section class="articles">
-            <h2 class="lang en">Articles</h2>
-            <h2 class="lang pt-br">Artigos</h2>
-            <ul>
-                <li class="lang en"><a href="http://www.phparch.com/2011/03/more-powerful-validation-from-respect/">More powerful Validation from Respect</a> on <a href="http://phparch.com">php|architect</a></li>
-                <li class="lang pt-br">
-                    <a href="http://www.phparch.com/2011/03/more-powerful-validation-from-respect/">Validações mais poderosas com Respect</a> na <a href="http://phparch.com">php|architect</a>
-                    <br /><span class="original-title">(título original: More powerful Validation from Respect)</span>
-                </li>
+            <section id="downloads">
+                <h2 class="trans">Installation</h2>
+                <p><span class="trans">All our packages are available on</span> <a target="_blank" href="https://packagist.org/packages/respect">Packagist</a>, <span class="trans">to install them use</span> <a target="_blank" href="https://getcomposer.org/">Composer</a>.</p>
+            </section>
 
-                <li class="lang en"><a href="http://thechangelog.com/post/3161849503/validation-the-most-awesome-validation-engine-ever-creat">Respect, Validation for PHP developers</a> on <a href="http://thechangelog.com">The Changelog</a></li>
-                <li class="lang pt-br">
-                    <a href="http://thechangelog.com/post/3161849503/validation-the-most-awesome-validation-engine-ever-creat">Respect, Validação para desenvolvedores PHP</a> no <a href="http://thechangelog.com">The Changelog</a>
-                    <br /><span class="original-title">(título original: Respect, Validation for PHP developers)</span>
-                </li>
+            <section id="support">
+                <h2 class="trans">Support</h2>
+                <ul>
+                    <li><span class="trans">First of all, read our documentations</span>;</li>
+                    <li><span class="trans">Create an issue on the GitHub repository of the component you're using</span>;</li>
+                    <li><span class="trans">See our IRC channel</span>: <a href="irc://irc.freenode.net/php-respect">#php-respect</a></p>
+                </ul>
+            </section>
 
-                <li class="lang en"><a href="http://forrst.com/posts/Respect_Relational_fluent_ORM_for_any_database-9SD">Respect\Relational: fluent ORM for any database</a> on <a href="http://forrst.com">Forrst</a></li>
-                <li class="lang pt-br">
-                    <a href="http://forrst.com/posts/Respect_Relational_fluent_ORM_for_any_database-9SD">Respect\Relational: uma fluente ORM para qualquer banco de dados</a> no <a href="http://forrst.com">Forrst</a>
-                    <br /><span class="original-title">(título original: Respect\Relational: fluent ORM for any database)</span>
-                </li>
-                <li class="lang en"><a href="http://imasters.com.br/linguagens/php/respect-um-microframework-de-respeito/">Respect, a respect microframework</a> on <a href="http://imasters.com">iMasters</a><br><span class="original-title">(original title: Respect, um microframework de respeito)
-                </li>    
-                <li class="lang pt-br"><a href="http://imasters.com.br/linguagens/php/respect-um-microframework-de-respeito/">Respect, um microframework de respeito</a> no <a href="http://imasters.com">iMasters</a>
-                </li>
+            <section id="articles">
+                <h2 class="trans">Articles</h2>
+                <ul>
+                    <li>
+                        <a href="http://www.phparch.com/2011/03/more-powerful-validation-from-respect/">More powerful Validation from Respect</a>
+                        <span class="trans">on</span> <a href="http://phparch.com">php|architect</a>
+                    </li>
 
-                <li class="lang en"><a href="http://phpsp.org.br/index.php/silex-respectrelational-uma-boa-dupla/">Silex +_ Respect\Relational - A good team</a> on <a href="http://phpsp.org">PHPSP blog</a><br><span class="original-title">(original title: Silex + Respect\Relational – Uma boa dupla)
-                </li>    
-                <li class="lang pt-br"><a href="http://phpsp.org.br/index.php/silex-respectrelational-uma-boa-dupla/">Silex + Respect\Relational – Uma boa dupla</a> no <a href="http://phpsp.org">PHPSP blog</a>
-                </li>
+                    <li>
+                        <a href="http://thechangelog.com/post/3161849503/validation-the-most-awesome-validation-engine-ever-creat">Respect, Validation for PHP developers</a>
+                        <span class="trans">on</span> <a href="http://thechangelog.com">The Changelog</a>
+                    </li>
 
-                <li class="lang en"><a href="http://www.slideshare.net/ivanrosolen/restbeer">Building APIs using the Respect microframework</a> on <a href="http://slideshare.net">Slideshare</a><br><span class="original-title">(original title: Criando APIs usando o microframework Respect)
-                </li>    
-                <li class="lang pt-br"><a href="http://www.slideshare.net/ivanrosolen/restbeer">Criando APIs usando o microframework Respect</a> no <a href="http://slideshare.net">Slideshare</a>
-                </li>
-            </ul>
-        </section>
+                    <li>
+                        <a href="http://zurb.com/forrst/posts/Respect_Relational_fluent_ORM_for_any_database-9SD">Respect\Relational: fluent ORM for any database</a>
+                        <span class="trans">on</span> <a href="http://zurb.com/forrst">Forrst</a>
+                    </li>
 
+                    <li>
+                        <a href="http://imasters.com.br/linguagens/php/respect-um-microframework-de-respeito/">Respect, um microframework de respeito</a>
+                        <span class="trans">on</span> <a href="http://imasters.com">iMasters</a>
+                    </li>
+
+                    <li>
+                        <a href="http://phpsp.org.br/index.php/silex-respectrelational-uma-boa-dupla/">Silex + Respect\Relational – Uma boa dupla</a>
+                        <span class="trans">on</span> <a href="http://phpsp.org">PHPSP blog</a>
+                    </li>
+
+                    <li>
+                        <a href="http://www.slideshare.net/ivanrosolen/restbeer">Criando APIs usando o microframework Respect</a>
+                        <span class="trans">on</span> <a href="http://slideshare.net">Slideshare</a>
+                    </li>
+                </ul>
+            </section>
+            <hr />
+        </main>
         <footer>
-            <p><a href="http://github.com/Respect" class="fork">Fork me on GitHub</a></p>
+            <a href="http://icons8.com">Icon pack by Icons8</a>.
         </footer>
+
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-59839366-1', 'auto');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>

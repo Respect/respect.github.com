@@ -1,255 +1,57 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
 body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    margin-top: 80px;
+    padding-bottom: 80px;
 }
 
-html {
-    min-width: 45em;
+header.navbar hgroup {
+    font-size: 28px;
+    height: 80px;
+    line-height: 50px;
+    margin-left: 20px;
 }
 
-/* End CSS Reset*/
-
-@font-face{
-    font-family:Champagne;
-    src: url('../fonts/champagne_limousines-webfont.eot');
-    src: url('../fonts/champagne_limousines-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/champagne_limousines-webfont.woff') format('woff'),
-        url('../fonts/champagne_limousines-webfont.ttf') format('truetype'),
-        url('../fonts/champagne_limousines-webfont.svg#ChampagneLimousinesRegular') format('svg');
+header.navbar hgroup {
+    float: left;
+}
+header.navbar hgroup h1 {
     font-weight: normal;
-    font-style: normal;
+    font-size: 99.9%;
+    display: inline;
+}
+header.navbar hgroup small {
+    display: inline;
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 10px;
 }
 
-body {
-    font: 11pt  Arial, sans-serif;
-    width: 40em;
-    margin: 0 auto;
-    color: #555;
-    padding-left: 2em;
-    padding-bottom: 2em;
-    position: relative;
+header.navbar nav.language {
+    float: right;
+    padding: 20px;
 }
 
-header{
-    padding-top:20px;
+@media screen and (max-width: 770px) {
+    header.navbar hgroup small {
+        display: none;
+    }
 }
 
-/* List Style*/
-
-li{
-    list-style-image:url('../img/icons/16/bullet_green.png');
-
-    margin-bottom: 0.3em;
-
+section h3 {
+    line-height: 0;
+    margin-bottom: 15px;
 }
-li a:nth-child(2) {
-    color: #5C9E4F;
+section .caption {
+    height: 120px;
+    padding-top: -10px;
 }
-
-/* Components Style */
-
-dl.component{
-    padding:0.2em 0.5em;
-    margin-bottom:1.5em;
-}
-dl.component:first-child {
-    margin-top:1em
+section .buttons {
+    text-align: center;
 }
 
-dl.component:last-child {
-    margin-bottom:0
+footer {
+    text-align: center;
 }
 
-dl.component dt {
-    background:url(../img/icons/16/brick.png) no-repeat;
-    padding-left:1.8em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-dl.component dt:first-child {
-    margin-top: 0;
-}
-dl.component dt small {
-    font-size: 0.7em;
-    color: #fff;
-    vertical-align: top;
-    padding:0.2em;
-    float:right;
-    margin: -0.5em -1em 0 0;
-}
-small.pre-alpha {
-    border:1px solid #8a4c4c;
-    background:#c84947;
-}
-
-small.dev {
-    border:1px solid #9fd18e;
-    background:#badbb0;
-}
-
-small.release {
-    border:1px solid #6495ED;
-    background: #9AC0CD;
-}
-
-dl.component dd {
-    margin-left: 1.8em;
-}
-
-
-/*Links Style*/
-
-a {
-    color: #777;
-}
-a:hover {
-    color: #5C9E4F;
-}
-
-/* Headers Style*/
-
-h1, h2 {
-    font-family:Champagne;
-    font-weight: normal;
-    color: #5C9E4F;	
-}
-h1 {
-    font-size: 4em;
-    margin-bottom: 0.1em;
-    padding-top: 0.2em;
-}
-
-h2 {
-    font-size: 2em;
-    margin: 1.2em 0 0.3em -1.2em;
-    padding-left:1.4em;
-    line-height:32px;
-}
-
-section.components h2 {
-    background:url(../img/icons/32/bricks.png) no-repeat;
-}
-
-section.downloads h2 {
-    background:url(../img/icons/32/box_down.png) no-repeat;
-}
-
-section.articles h2 {
-    background:url(../img/icons/32/books.png) no-repeat;
-}
-section.support h2 {
-    background:url(../img/icons/32/support.png) no-repeat;
-}
-
-/* Nav Lang Style*/
-
-nav.language {
-    position:absolute;
-    top:0;
-    right:0;	
-}
-
-nav.language select {
-    margin-top: 10px;
-    border: 1px solid #5C9E4F;
-    color: #5C9E4F;
-    background: #FFFFFF;
-}
-
-.select, .component {
-    background:#f0f6ee;
-    border: 1px solid #e4efe1;
-}
-
-.select {
-    border-top:none
-}
-
-/* Fork me Button */
-
-a.fork {
-    font-size: 11px;
-    color: #333333;
-    text-decoration:none;
-    padding: 5px 7px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    text-shadow: 1px 1px 0px #ffffff;
-    border: solid #d4d4d4 1px;
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-    background: -moz-linear-gradient(top, #f4f4f4, #ececec);
-    position:absolute;
-    right:0;
-    top:55px
-}
-
-a.fork:before{
-    background:url(../img/icons/16/fork.png) no-repeat;
-    content:".";
-    padding-left:11px;
-    color:rgba(0,0,0,0);
-    text-shadown:none
-}
-
-a.fork:hover {
-    color: #fff;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-    border: solid #5c9e4f 1px;
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#97c68d), to(#5c9e4f));
-    background: -moz-linear-gradient(top, #97c68d, #5c9e4f)
-}
-a.fork:hover:before{
-    background:url(../img/icons/16/fork_hover.png) no-repeat;
-    text-shadow:none;
-}
-
-/* Others*/
-
-.original-title {
-    margin-left: 15px;
-    font-style: italic;
-    font-size: 0.8em;
+hr {
+    clear: both;
 }
