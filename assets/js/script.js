@@ -46,9 +46,15 @@ $(function() {
   var createBlocks = function (repositories)
   {
     $.each(repositories, function (i, repository) {
+
+      var weight_push       = 1,
+          weight_stargazers = 5000000;
+
       repository.created_at = new Date(repository.created_at);
       repository.pushed_at  = new Date(repository.pushed_at);
       repository.updated_at = new Date(repository.updated_at);
+      repository.swagger    = repository.pushed_at.getTime() * weight_push;
+      repository.swagger    += repository.stargazers_count * weight_stargazers;
 
       $.each(catalog, function (section) {
         if (-1 == catalog[section].indexOf(repository.name)) {
@@ -60,11 +66,11 @@ $(function() {
 
     // Sort by most-recently pushed to.
     repositories.sort(function (a, b) {
-      if (a.pushed_at < b.pushed_at) {
+      if (a.swagger < b.swagger) {
         return 1;
       }
 
-      if (b.pushed_at < a.pushed_at) {
+      if (b.swagger < a.swagger) {
         return -1;
       }
 
@@ -83,7 +89,7 @@ $(function() {
                     '      <p>' +
                     '        <a href="'+ repository.html_url + '" class="btn btn-default trans" role="button">Repository</a>';
 
-      if (repository.homepage != '') {
+      if (repository.homepage) {
         content += '  <a href="'+ repository.homepage + '" class="btn btn-default trans" role="button">Documentation</a>';
       }
 
@@ -122,16 +128,17 @@ $(function() {
       "Documentation": "Documentação",
       "Experimental, HTML-only templating engine": "Template engine experimental que funciona apenas com HTML",
       "First of all, read our documentations": "Em primeiro lugar, leia nossas documentações",
+      "Icon pack by": "Pacote de ícones por",
       "Installation": "Instalação",
       "on": "em",
       "Persistence simplified": "Persistência simplificada",
       "Repository": "Repositório",
-      "The Couscous template for Respect projects": "Template do Couscous para os projetos do Respect",
       "Respect - Simple independent components for building or improving PHP applications": "Respect - Componentes simples e independentes para construção e melhoria de aplicações PHP",
       "See our IRC channel": "Visite nosso canal no IRC",
       "See us on GitHub": "Visite-nos no GitHub",
       "Simple independent components for building or improving PHP applications": "Componentes simples e independentes para construção e melhoria de aplicações PHP",
       "Support": "Suporte",
+      "The Couscous template for Respect projects": "Template do Couscous para os projetos do Respect",
       "The most awesome validation engine ever created for PHP": "O mais incrível mecanismo de validação já criado para PHP",
       "Thin controller for RESTful applications": "Controller para aplicações RESTful",
       "to install them use": "para instalá-los use",
