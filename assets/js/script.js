@@ -46,9 +46,15 @@ $(function() {
   var createBlocks = function (repositories)
   {
     $.each(repositories, function (i, repository) {
+
+      var weight_push       = 1,
+          weight_stargazers = 5000000;
+
       repository.created_at = new Date(repository.created_at);
       repository.pushed_at  = new Date(repository.pushed_at);
       repository.updated_at = new Date(repository.updated_at);
+      repository.swagger    = repository.pushed_at.getTime() * weight_push;
+      repository.swagger    += repository.stargazers_count * weight_stargazers;
 
       $.each(catalog, function (section) {
         if (-1 == catalog[section].indexOf(repository.name)) {
@@ -60,11 +66,11 @@ $(function() {
 
     // Sort by most-recently pushed to.
     repositories.sort(function (a, b) {
-      if (a.pushed_at < b.pushed_at) {
+      if (a.swagger < b.swagger) {
         return 1;
       }
 
-      if (b.pushed_at < a.pushed_at) {
+      if (b.swagger < a.swagger) {
         return -1;
       }
 
