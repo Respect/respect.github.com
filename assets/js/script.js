@@ -83,7 +83,7 @@ $(function() {
                     '      <p>' +
                     '        <a href="'+ repository.html_url + '" class="btn btn-default trans" role="button">Repository</a>';
 
-      if (repository.homepage != '') {
+      if (repository.homepage) {
         content += '  <a href="'+ repository.homepage + '" class="btn btn-default trans" role="button">Documentation</a>';
       }
 
