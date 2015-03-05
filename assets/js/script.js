@@ -1,17 +1,17 @@
-$(function() {
+$(function () {
 
   var Cache = {
     isAvailable: function () {
       return (undefined !== window.sessionStorage);
     },
-    save : function (key, data) {
+    save: function (key, data) {
       if (!this.isAvailable()) {
         return;
       }
 
       window.sessionStorage.setItem(key, JSON.stringify(data));
     },
-    load: function(key) {
+    load: function (key) {
       if (!this.isAvailable()) {
         return;
       }
@@ -25,8 +25,28 @@ $(function() {
     }
   };
 
-  var catalog = {
-    "components" : [
+  var githubRequest = function (uri, callback) {
+    var url   = "https://api.github.com" + uri;
+    var data  = Cache.load(uri);
+    if (data) {
+      callback.call(null, data);
+      return;
+    }
+
+    $.ajax({
+      "url": url,
+      "async": false,
+      "dataType": "json",
+      "success": function (data) {
+        callback.call(null, data);
+
+        Cache.save(uri, data);
+      }
+    });
+  }
+
+  var sections = {
+    "components": [
       "Config",
       "Data",
       "Relational",
@@ -43,9 +63,21 @@ $(function() {
     ]
   };
 
-  var createBlocks = function (repositories)
-  {
-    $.each(repositories, function (i, repository) {
+  var createBlocks = function (data) {
+    var repositories = [];
+    $.each(data, function (index, repository) {
+
+      $.each(sections, function (section) {
+        if (-1 == sections[section].indexOf(repository.name)) {
+          return;
+        }
+
+        repository.section = section;
+      });
+
+      if (!repository.section) {
+        return;
+      }
 
       var weight_push       = 1,
           weight_stargazers = 5000000;
@@ -56,12 +88,36 @@ $(function() {
       repository.swagger    = repository.pushed_at.getTime() * weight_push;
       repository.swagger    += repository.stargazers_count * weight_stargazers;
 
-      $.each(catalog, function (section) {
-        if (-1 == catalog[section].indexOf(repository.name)) {
-          return;
-        }
-        repository.section = section;
+      githubRequest("/repos/Respect/" + repository.name + "/tags", function (tags) {
+        var versions = [];
+
+        $.each(tags, function (i, tag) {
+          versions.push(tag.name);
+        });
+
+        versions.sort(function (a, b) {
+          var a_pieces = a.split('.');
+          var b_pieces = b.split('.');
+
+          for (var i = 0; i < a_pieces.length; ++i) {
+            if (a_pieces[i] == b_pieces[i]) {
+              continue;
+            }
+
+            if (a_pieces[i] > b_pieces[i]) {
+              return -1;
+            }
+
+            return 1;
+          }
+
+          return 0;
+        });
+
+        repository.version = versions.shift();
       });
+
+      repositories.push(repository);
     });
 
     // Sort by most-recently pushed to.
@@ -78,44 +134,31 @@ $(function() {
     });
 
     $.each(repositories, function (i, repository) {
-      // console.info(repository.name);
       var content = '<div class="col-sm-6 col-md-4">' +
-                    '  <div class="thumbnail">' +
-                    '    <div class="caption">' +
-                    '      <h3 class="trans">' + repository.name + '</h3>' +
-                    '      <p class="trans">' + repository.description + '</p>' +
-                    '    </div>' +
-                    '    <div class="buttons">' +
-                    '      <p>' +
-                    '        <a href="'+ repository.html_url + '" class="btn btn-default trans" role="button">Repository</a>';
-
-      if (repository.homepage) {
-        content += '  <a href="'+ repository.homepage + '" class="btn btn-default trans" role="button">Documentation</a>';
-      }
-
-      content +=     '      </p>' +
-                    '    </div>' +
-                    '  </div>' +
+                      '<div class="thumbnail">' +
+                        '<div class="caption">' +
+                          '<h3 class="trans">' +
+                            repository.name +
+                            (repository.version ? ' <small>' + repository.version + '</small>' : '') +
+                          '</h3>' +
+                          '<p class="trans">' + repository.description + '</p>' +
+                        '</div>' +
+                        '<div class="buttons">' +
+                          '<p>' +
+                            '<a href="' + repository.html_url + '" class="btn btn-default btn-sm trans" role="button">Repository</a>' +
+                            (repository.homepage ? ' <a href="' + repository.homepage + '" class="btn btn-default btn-sm trans" role="button">Documentation</a>' : '') +
+                          '</p>' +
+                        '</div>' +
+                      '</div>' +
                     '</div>';
-      $('#'+repository.section + ' .row').append(content);
+      $('#' + repository.section + ' .row').append(content);
     });
   }
 
-  var repositories = Cache.load("repositories");
-  if (repositories) {
-    createBlocks(repositories);
-  } else {
-    $.getJSON("https://api.github.com/users/Respect/repos?callback=?", function (result) {
-      repositories = result.data;
-
-      createBlocks(repositories);
-
-      Cache.save("repositories", repositories);
-    });
-  }
+  githubRequest("/users/Respect/repos", createBlocks);
 
   var messages = {
-    "pt-br" : {
+    "pt-br": {
       "A conventional project tool for PHP and git.": "Ferramenta para convenção de projetos PHP e Git",
       "A fluent, intuitive ORM for any relational database engine": "Uma ORM fluente e intuitivo para qualquer banco de dados relacional",
       "A powerful, small, deadly simple configurator and dependency injection container DSL made to be easy": "Um poderoso, pequeno e muito simples dependency injection container com uma DSL feita para ser simples de usar",
@@ -146,10 +189,9 @@ $(function() {
     }
   };
 
-  var translate = function (locale)
-  {
+  var translate = function (locale) {
     if (locale == "en") {
-      restoreTranslation();
+      translateRestore();
       return;
     }
 
@@ -172,8 +214,7 @@ $(function() {
     });
   };
 
-  var restoreTranslation = function ()
-  {
+  var translateRestore = function () {
     $(".trans").each(function () {
       var element = $(this);
       var content = element.attr("data-content");
@@ -193,7 +234,7 @@ $(function() {
     $("#language").val(settings.locale);
   }
 
-  $("#language").change(function() {
+  $("#language").change(function () {
     var locale = $(this).val();
 
     translate(locale);
