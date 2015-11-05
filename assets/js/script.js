@@ -186,7 +186,36 @@ $(function () {
       "Thin controller for RESTful applications": "Controller para aplicações RESTful",
       "to install them use": "para instalá-los use",
       "Tools": "Ferramentas"
-    }
+    },
+    "fr-fr": {
+      "A conventional project tool for PHP and git.": "Outil pour PHP projets de Convention et Git",
+      "A fluent, intuitive ORM for any relational database engine": "Un ORM fluent et intuitif pour tout relationnelle base de données",
+      "A powerful, small, deadly simple configurator and dependency injection container DSL made to be easy": "Un conteneur d'injection puissant, petit et très simple avec une ligne DSL est conçu pour être simple à utiliser",
+      "A Respect\\Validation Bundle for Symfony": "Un Bundle Respect\\Validation pour Symfony",
+      "Add-ons": "Extensions",
+      "All our packages are available on": "Tous nos forfaits sont disponibles dans la",
+      "Articles": "Articles",
+      "Components": "Composants",
+      "Create an issue on the GitHub repository of the component you're using": "Créer un issue sur le référentiel du projet que vous utilisez GitHub",
+      "Documentation": "Documentation",
+      "Experimental, HTML-only templating engine": "Moteur de template expérimental ne fonctionne qu'avec HTML",
+      "First of all, read our documentations": "Tout d'abord, lisez notre documentation",
+      "Icon pack by": "Pack d'icônes pour",
+      "Installation": "Installation",
+      "on": "dans",
+      "Persistence simplified": "Persistance simplifiée",
+      "Repository": "Référentiel",
+      "Respect - Simple independent components for building or improving PHP applications": "Respect - simple et indépendantes des composants pour la construction et l'amélioration des applications PHP",
+      "See our IRC channel": "Visitez notre chaîne sur IRC",
+      "See us on GitHub": "Visitez-nous sur GitHub",
+      "Simple independent components for building or improving PHP applications": "Simples et indépendantes des composants pour la construction et l'amélioration des applications PHP",
+      "Support": "Prise en charge",
+      "The Couscous template for Respect projects": "Modèle du Couscous selon les plans de Respect",
+      "The most awesome validation engine ever created for PHP": "Le moteur de validation plus incroyable jamais créé pour PHP",
+      "Thin controller for RESTful applications": "Contrôleur pour les applications RESTful",
+      "to install them use": "pour installer leur utilisation",
+      "Tools": "Outils"
+    }      
   };
 
   var translate = function (locale) {
